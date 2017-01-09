@@ -1,0 +1,6 @@
+{
+  "name": "CKIPClient API",
+  "description": "A simple json api service to connect with CKIP service.",
+  "repository": "https://github.com/renddiyeh/ckip-heroku",
+  "addons": []
+}

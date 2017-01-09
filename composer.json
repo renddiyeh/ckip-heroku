@@ -1,5 +1,10 @@
 {
   "require": {
-    "vlucas/phpdotenv": "^2.4"
+    "vlucas/phpdotenv": "^2.4",
+    "fukuball/ckip-client-php": "^0.0.2",
+    "silex/silex": "^2.0"
+  },
+  "require-dev": {
+    "heroku/heroku-buildpack-php": "*"
   }
 }
