@@ -10,14 +10,29 @@ class CKIPServiceProvider implements ServiceProviderInterface
 {
     public function register(Container $app)
     {
-      $dotenv = new Dotenv(__DIR__ . '/../');
-      $dotenv->load();
+      try {
+        $dotenv = new Dotenv(__DIR__ . '/../');
+        $dotenv->load();
+        $dotenv->required([
+          'CKIP_SERVER',
+          'CKIP_PORT',
+          'CKIP_USERNAME',
+          'CKIP_PASSWORD',
+        ]);
+      } catch (Exception $e) {
+        if (
+          !getenv('CKIP_SERVER')
+          || !getenv('CKIP_PORT')
+          || !getenv('CKIP_USERNAME')
+          || !getenv('CKIP_PASSWORD')
+        ) return;
+      }
 
       $app['CKIP'] = new CKIPClient(
-         $_ENV['CKIP_SERVER'],
-         $_ENV['CKIP_PORT'],
-         $_ENV['CKIP_USERNAME'],
-         $_ENV['CKIP_PASSWORD']
+        getenv('CKIP_SERVER'),
+        getenv('CKIP_PORT'),
+        getenv('CKIP_USERNAME'),
+        getenv('CKIP_PASSWORD')
       );
     }
 }

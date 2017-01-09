@@ -15,6 +15,12 @@ $app->get('/', function (Request $request) use ($app) {
     ];
     return $app->json($error, 404);
   }
+  if (!isset($app['CKIP'])) {
+    $error = [
+      'message' => 'Cannot intitialize CKIP serivice, please check ENV setting.',
+    ];
+    return $app->json($error, 500);
+  }
 
   $text = $request->query->get('q');
   $ckip = $app['CKIP'];

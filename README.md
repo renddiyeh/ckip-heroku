@@ -17,13 +17,29 @@ CKIP_PASSWORD
 
 You can copy from `.env.example`
 
-## Develop
+## Usage
+
+First start server locally.
 
 ```
 php -S localhost:8000 -t web/
 ```
 
+Then simply send GET request to `/` route with `?q=` parameter.
+
+Example:
+
+```
+http://localhost:8000?q=獨立音樂需要大家一起來推廣，歡迎加入我們的行列！
+```
+
 ## Deploying
+
+```
+heroku create
+git push heroku master
+heroku open
+```
 
 Remember to manually set Heroku ENV use
 
