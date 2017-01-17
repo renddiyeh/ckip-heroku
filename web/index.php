@@ -1,10 +1,10 @@
 <?php
 
-require_once __DIR__ . '/../vendor/autoload.php';
+require_once '../vendor/autoload.php';
 
 use Symfony\Component\HttpFoundation\Request;
 
-$app = require __DIR__ . '/../src/app.php';
+$app = require '../src/app.php';
 
 $app->get('/', function (Request $request) use ($app) {
 
@@ -30,9 +30,5 @@ $app->get('/', function (Request $request) use ($app) {
   $data = [ 'result' => $ckip->getTerm() ];
   return $app->json($data);
 });
-
-// $app->options('/', function() use ($app) {
-//   return $app->json([], 200);
-// });
 
 $app->run();
