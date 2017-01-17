@@ -31,4 +31,8 @@ $app->get('/', function (Request $request) use ($app) {
   return $app->json($data);
 });
 
+// $app->options('/', function() use ($app) {
+//   return $app->json([], 200);
+// });
+
 $app->run();
