@@ -2,7 +2,7 @@
 
 A simple json api service to connect with CKIP service.
 
-This app makes use of the [Silex](http://silex.sensiolabs.org/) web framework, which can easily be deployed to Heroku.
+This app makes use of the [Slim](https://www.slimframework.com/) web framework, which can easily be deployed to Heroku.
 
 ## Setting
 
@@ -41,10 +41,8 @@ git push heroku master
 heroku open
 ```
 
-Remember to manually set Heroku ENV use
+Remember set Heroku ENV use
 
 ```
 heroku config:set CKIP_SERVER=ServerAddr CKIP_PORT=PortNumer ...
 ```
-
-[![Deploy to Heroku](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)

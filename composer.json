@@ -1,9 +1,9 @@
 {
   "require": {
-    "vlucas/phpdotenv": "^2.4",
     "fukuball/ckip-client-php": "^0.0.2",
-    "silex/silex": "^2.0",
-    "jdesrosiers/silex-cors-provider": "~1.0"
+    "slim/slim": "4.*",
+    "vlucas/phpdotenv": "^5.3",
+    "slim/psr7": "^1.4"
   },
   "require-dev": {
     "heroku/heroku-buildpack-php": "*"
